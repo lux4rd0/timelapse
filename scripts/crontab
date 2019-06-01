@@ -1,0 +1,11 @@
+# Cacti Timelapase
+*/1 * * * * /mnt/attic/scripts/timelapse/cacti/sonos-office.sh >/dev/null 2>&1
+*/1 * * * * sleep 30; /mnt/attic/scripts/timelapse/cacti/sonos-office.sh >/dev/null 2>&1
+*/1 * * * * /mnt/attic/scripts/timelapse/cacti/network-tylegw-internet.sh >/dev/null 2>&1
+*/1 * * * * sleep 30; /mnt/attic/scripts/timelapse/cacti/network-tylegw-internet.sh >/dev/null 2>&1
+*/1 * * * * /mnt/attic/scripts/timelapse/cacti/network-tylegw-internet_fullday.sh >/dev/null 2>&1
+*/1 * * * * sleep 30; /mnt/attic/scripts/timelapse/cacti/network-tylegw-internet_fullday.sh >/dev/null 2>&1
+
+0 1 * * * /mnt/attic/scripts/timelapse/cacti/cron_sonos-office.sh 1
+0 1 * * * /mnt/attic/scripts/timelapse/cacti/cron_network-tylegw-internet.sh 1
+0 1 * * * /mnt/attic/scripts/timelapse/cacti/cron_network-tylegw-internet_fullday.sh 1
