@@ -10,4 +10,5 @@ DATEDAY=`date --date="$1 day ago" +%d`
 
 FULLPATH="${LOGPARENT}/${DATEYEAR}/${DATEMONTH}/${DATEDAY}"
 
-ffmpeg -r 30 -f image2 -pattern_type glob -i "${FULLPATH}/sonosoffice_*.png" -vcodec libx264 -crf 23 -pix_fmt yuv420p ${LOGPARENT}/sonosoffice_${DATEYEAR}${DATEMONTH}${DATEDAY}.mp4
+/root/bin/ffmpeg -r 30 -f image2 -pattern_type glob -i "${FULLPATH}/sonosoffice_*.png" \
+-vcodec libx264 -crf 23 -pix_fmt yuv420p ${LOGPARENT}/sonosoffice_${DATEYEAR}${DATEMONTH}${DATEDAY}.mp4
