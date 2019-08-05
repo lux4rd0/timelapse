@@ -1,0 +1,7 @@
+# UBNT Timelapse
+
+*/1 * * * * /usr/bin/flock -w 0 /mnt/attic/scripts/timelapse/ubnt/ubnt-pergolanorth.lock /mnt/attic/scripts/timelapse/ubnt/ubnt-pergolanorth.sh >/dev/null 2>&1
+*/1 * * * * /usr/bin/flock -w 0 /mnt/attic/scripts/timelapse/ubnt/ubnt-pergolasouth.lock /mnt/attic/scripts/timelapse/ubnt/ubnt-pergolasouth.sh >/dev/null 2>&1
+
+0 2 * * * /mnt/attic/scripts/timelapse/ubnt/cron_ubnt-pergolanorth.sh 1 >/dev/null 2>&1
+0 2 * * * /mnt/attic/scripts/timelapse/ubnt/cron_ubnt-pergolasouth.sh 1 >/dev/null 2>&1
