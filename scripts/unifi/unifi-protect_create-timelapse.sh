@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #
 # Unifi Protect Daily Video Timelapse
 #
@@ -13,16 +15,16 @@ CAMERA=$2
 
 PARENTPATH="/mnt/attic/timelapse/unifi"
 
-DATEYEAR=`date --date="$1 day ago" +%Y`
-DATEMONTH=`date --date="$1 day ago" +%m`
-DATEDAY=`date --date="$1 day ago" +%d`
+DATEYEAR=$(date --date="${DAYS} day ago" +%Y)
+DATEMONTH=$(date --date="${DAYS} day ago" +%m)
+DATEDAY=$(date --date="${DAYS} day ago" +%d)
 
 IMAGEPATH="${PARENTPATH}/${CAMERA}/${DATEYEAR}/${DATEMONTH}/${DATEDAY}"
 VIDEOPATH="${PARENTPATH}/video/${DATEYEAR}/${DATEMONTH}/${CAMERA}"
 
-    if [ ! -d ${VIDEOPATH} ]
+    if [ ! -d "${VIDEOPATH}" ]
         then
-        mkdir -p ${VIDEOPATH}
+        mkdir -p "${VIDEOPATH}"
     fi
 
 docker run -v $(pwd):$(pwd) -v /mnt/attic:/mnt/attic -w $(pwd)\
