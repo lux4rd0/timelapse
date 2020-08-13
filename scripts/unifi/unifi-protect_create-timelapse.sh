@@ -2,6 +2,12 @@
 # Unifi Protect Daily Video Timelapse
 #
 
+## Unifi Protect Timelapse
+
+#0 2 * * * /mnt/attic/scripts/timelapse/unifi/unifi-protect_create-timelapse.sh 1 frontdoor >/dev/null 2>&1
+#15 2 * * * /mnt/attic/scripts/timelapse/unifi/unifi-protect_create-timelapse.sh 1 pergolanorth >/dev/null 2>&1
+#30 2 * * * /mnt/attic/scripts/timelapse/unifi/unifi-protect_create-timelapse.sh 1 pergolasouth >/dev/null 2>&1
+
 DAYS=$1
 CAMERA=$2
 
